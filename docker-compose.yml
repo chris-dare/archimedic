@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  notebook:
+    container_name: archimedic_notebook
+    image: chrisdare/archimedic:latest
+    command: ["sh", "/start.sh"]
+    ports:
+      - 80:80
+    environment:
+      PROJECT_NAME: ${PROJECT_NAME?Variable not set}
+    volumes:
+      - .:/app
